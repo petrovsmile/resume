@@ -1,0 +1,21 @@
+
+@font-face {
+    font-family: PressStart2P; /* имя шрифта для CSS правил */
+    src: local("PressStart2P"), /* проверяем наличие шрифта в ОС пользователя */
+         url(/fonts/PressStart2P.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+ }
+ 
+ .background_name{
+    position: absolute;
+    width: 100%;
+    left: 50px;
+    top: 50px;
+    color: #f9f9f9;
+    font-size: 8vw;
+    font-family: 'PressStart2P';
+}
+
+.index_hello_text{
+    margin-top: 100px;
+    font-size: 25px;
+}

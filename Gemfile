@@ -5,6 +5,7 @@ ruby "3.0.0"
 
 #My gems
 
+gem 'brakeman'
 gem 'rubocop', require: false
 gem 'rubocop-rails', require: false
 
