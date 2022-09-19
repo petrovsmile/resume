@@ -10,6 +10,9 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "#{controller_name}/#{action_name}", "data-turbo-track": "reload" %>
 
+    <%= javascript_include_tag "application",:defer => "defer" %>
+    <%= javascript_include_tag "#{controller_name}/#{action_name}",:defer => "defer" %>
+  
   </head>
 
   <body>
@@ -46,6 +49,5 @@
     </div>    
   </body>
 
-  <%= javascript_include_tag "application",:defer => "defer" %>
-  <%= javascript_include_tag "#{controller_name}/#{action_name}",:defer => "defer" %>
+  
 </html>

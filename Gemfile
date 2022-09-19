@@ -8,9 +8,11 @@ ruby '3.0.0'
 # My gems
 
 gem 'brakeman'
+gem 'coffee-rails'
 gem 'jquery'
 gem 'jquery-rails'
 gem 'pg'
+gem 'puma', '~> 5.0'
 gem 'rails_admin'
 gem 'russian', '~> 0.6.0'
 gem 'rubocop', require: false
