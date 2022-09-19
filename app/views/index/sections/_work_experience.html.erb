@@ -1,0 +1,80 @@
+<a name="work_experience" class="js-scroll-section"></a>
+<div class="title_section">
+    Опыт работы
+</div>
+
+<% work_experiences.each_with_index do |work_experience, index|
+    range_of_work_position = work_experience.range_of_work_position(start_date,finish_date)
+    %> 
+    <div class="work_experience">  
+
+        <div class="work_experience_company_name">
+            #<%=(index + 1)%>
+            <b><%=work_experience.company_name%></b>
+            <span><%=work_experience.city%></span>
+        </div>
+        <a href="<%=work_experience.web_site%>" target="_blank" class="work_experience_website">
+            🔗 <%=URI(work_experience.web_site).host%>
+        </a>
+        
+
+        <div class="work_experience_date_info">
+            <div class="work_experience_date_info_date work_experience_date_info_date_main start">
+                <%=start_date.strftime('%b %Y')%>
+            </div>
+            <div class="work_experience_date_info_date work_experience_date_info_date_main finish">
+                <%=finish_date.strftime('%b %Y')%>
+            </div>
+            <div class="work_experience_date_info_range" style="width: <%=range_of_work_position[:width]%>%; left: <%=range_of_work_position[:left]%>%">
+                Период работы
+                <div class="work_experience_date_info_date work_experience_date_info_date_range start">
+                    <%=work_experience.start_work.strftime('%b %Y')%>
+                </div>
+                <div class="work_experience_date_info_date work_experience_date_info_date_range finish">
+                    <%=work_experience.finish_work.strftime('%b %Y')%>
+                </div>
+            </div>
+        </div>
+
+        <div class="work_experience_post">
+            Должность: <span><%=work_experience.post%></span>
+        </div>
+
+        <div class="work_experience_stacks">
+          <div class="work_experience_stacks_title">
+            Стек:
+          </div>
+          <% work_experience.stacks.order(name: :asc).each do |stack| %>
+              <div class="work_experience_stack"><%=stack.name%></div>
+          <% end %>
+        </div>
+        
+        <div class="work_experience_description">
+            <div class="work_experience_description_title">
+                Описание проекта: 
+            </div>
+            <div class="work_experience_description_text">
+                <%=raw work_experience.description%>
+            </div>
+        </div>
+
+        <div class="work_experience_description">
+            <div class="work_experience_description_title">
+                Что я делал: 
+            </div>
+            <div class="work_experience_description_text">
+                <%=raw work_experience.what_did_do.gsub("\n","<br>")%>
+            </div>
+        </div>
+
+        <div class="work_experience_description">
+            <div class="work_experience_description_title">
+                Чему научился: 
+            </div>
+            <div class="work_experience_description_text">
+                <%=raw work_experience.what_learned.gsub("\n","<br>")%>
+            </div>
+        </div>
+        
+    </div>  
+<% end %>

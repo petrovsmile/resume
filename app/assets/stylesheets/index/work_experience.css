@@ -1,0 +1,89 @@
+.work_experience{
+  margin-top: 30px;
+}
+.work_experience_company_name{
+  font-size: 22px;
+}
+.work_experience_company_name span{
+  font-size: 16px;
+}
+.work_experience_date_info{
+  width: 100%;
+  position: relative;
+  height: 20px;
+  background: #eee;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.work_experience_date_info_range{
+  left: 25%;
+  width: 50%;
+  height: 20px;
+  background-color: palegreen;
+  position: absolute;
+  top: 0;
+  line-height: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+.work_experience_date_info_date{
+  position: absolute;
+  font-size: 14px;
+}
+.work_experience_date_info_date.start{
+  left: 0;
+}
+.work_experience_date_info_date.finish{
+  right: 0;
+}
+.work_experience_date_info_date_main{
+  top: calc(100% + 5px);
+}
+.work_experience_date_info_date_range{
+  bottom: calc(100% + 5px);
+  font-weight: bold;
+}
+.work_experience_website{
+  font-size: 16px;
+  color:Navy;
+  margin-top: 10px;
+  display: block;
+  text-decoration: none;
+} 
+.work_experience_post{
+  font-size: 16px;
+}
+.work_experience_post span{
+  font-weight: bold;
+  font-size: 20px;
+}
+.work_experience_stacks{
+  overflow: hidden;
+  margin-top: 10px;
+}
+.work_experience_stack{
+  float: left;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  background: #eee;
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 0px 7px 0px 7px;
+  line-height: 25px;
+  height: 25px;
+}
+.work_experience_stacks_title{
+  float: left;
+  margin-right: 10px;
+  line-height: 25px;
+}
+.work_experience_description{
+  font-size: 16px;
+  margin-top: 15px;
+  background: #f5f5f5;
+  padding: 10px;
+}
+.work_experience_description_title{
+  font-weight: bold;
+  margin-bottom: 5px;
+}

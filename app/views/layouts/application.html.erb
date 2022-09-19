@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PetrovSmile</title>
+    <title>Петров Александр. Резюме.</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "#{controller_name}/#{action_name}", "data-turbo-track": "reload" %>
-
-    <%= javascript_include_tag "application",:defer => "defer" %>
-    <%= javascript_include_tag "#{controller_name}/#{action_name}",:defer => "defer" %>
 
   </head>
 
@@ -18,36 +16,36 @@
 
     <div class="left_menu">
       <div class="content">
-        <img class="left_menu_avatar" src="/img/index/avatar.png" alt="">
-        <ul class="left_menu_ul">
-          <li>
-            <a href="">Hello world! <--</a>
+        <a href="/">
+          <img class="left_menu_avatar" src="/img/index/avatar.png" alt="">
+        </a>
+        <ul class="main_menu">
+          <li class="active">
+            <a href="/#hello">Hello world!</a>
           </li>
           <li>
-            <a href="">Опыт работы</a>
+            <a href="/#work_experience">Опыт работы</a>
           </li>
           <li>
-            <a href="">Портфолио</a>
+            <a href="/#portfolio">Портфолио</a>
           </li>
           <li>
-            <a href="">Обо мне</a>
+            <a href="/#about_me">Обо мне</a>
           </li>
           <li>
-            <a href="">Контакты</a>
+            <a href="/#contacts">Контакты</a>
           </li>
-         
         </ul>
       </div>
-      
     </div>
-    
+
     <div class="main_content">
       <div class="content">
         <%= yield %>
       </div>
-      
-    </div>
-
-    
+    </div>    
   </body>
+
+  <%= javascript_include_tag "application",:defer => "defer" %>
+  <%= javascript_include_tag "#{controller_name}/#{action_name}",:defer => "defer" %>
 </html>

@@ -1,0 +1,2 @@
+class PortfolioStack < ApplicationRecord
+end

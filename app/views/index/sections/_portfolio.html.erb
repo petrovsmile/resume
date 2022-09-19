@@ -1,0 +1,17 @@
+<a name="portfolio" class="js-scroll-section"></a>
+<div class="title_section">
+    Портфолио
+</div>
+
+<% Portfolio.all.each do |portfolio| %>
+
+    <%= link_to portfolio.name, portfolio_path(portfolio.id)%>
+    <p>
+        <%= portfolio.name %>
+        
+    </p>
+    <% portfolio.images.each do |image| %>
+        <img src="<%= url_for(image.src.variant(:thumb)) %>" alt="">
+    <% end %>
+
+<% end %>
