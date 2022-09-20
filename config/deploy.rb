@@ -1,8 +1,9 @@
 set :repo_url, 'git@github.com:petrovsmile/resume.git'
+set :branch, "main"
 set :application, 'resume'
 application = 'resume'
 set :rvm_type, :user
-set :rvm_ruby_version, '2.6.3'
+set :rvm_ruby_version, '3.0.0'
 set :deploy_to, "/home/app/project/resume/"
 
 
