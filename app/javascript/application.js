@@ -5,17 +5,6 @@
 
 $(document).ready(function(){
 
-  $(document).click(function(){
-    $.ajax({
-      type     :'POST',
-      cache    : false,
-      async    : true,
-      url  : '/joystick/event',
-      success  : function(response) {
-        console.log(response);
-      }
-    });
-  });
   
 
   $('.main_menu a').click(function(e){

@@ -1,5 +1,5 @@
 (function() {
-  App.comments = App.cable.subscriptions.create({ channel: "JoystickChannel", room: 'joystick' }, {
+  App.cable.subscriptions.create({ channel: "JoystickChannel" }, {
     connected: function() {
       console.log('connected');
     },

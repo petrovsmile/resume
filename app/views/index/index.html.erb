@@ -1,3 +1,7 @@
+<p>
+  <a href="/joysticks/<%= cookies[:joystick_id] %>" target="_blank">JOYSTICK #<%= cookies[:joystick_id] %></a>
+
+</p>
 <%=render 'index/sections/hello'%>
 <%=render 'index/sections/work_experience', work_experiences: @work_experiences, start_date: @work_experiences_start_date, finish_date: @work_experiences_finish_date%>
 <%=render 'index/sections/portfolio'%>

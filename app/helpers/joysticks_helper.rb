@@ -1,0 +1,2 @@
+module JoysticksHelper
+end

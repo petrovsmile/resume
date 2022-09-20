@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post 'joystick/event' => 'joystick#event'
 
   
-
+  resources :joysticks, only: [:show]
   resources :portfolio, only: [ :show ]
   root 'index#index'
 end

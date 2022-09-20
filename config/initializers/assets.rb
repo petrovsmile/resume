@@ -15,3 +15,4 @@ Rails.application.config.assets.version = '1.0'
 
 Rails.application.config.assets.precompile += %w[index/index.js index/index.css]
 Rails.application.config.assets.precompile += %w[portfolio/show.js portfolio/show.css]
+Rails.application.config.assets.precompile += %w[joysticks/show.js joysticks/show.css]

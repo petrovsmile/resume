@@ -1,0 +1,2 @@
+class Joystick < ApplicationRecord
+end
