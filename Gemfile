@@ -11,7 +11,7 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-rvm'
   gem 'capistrano-ssh-doctor', '~> 1.0'
-  gem 'capistrano-npm'
+  gem 'capistrano3-puma'
 end
 
 # My gems
