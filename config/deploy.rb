@@ -4,12 +4,23 @@ set :application, 'resume'
 application = 'resume'
 set :rvm_type, :user
 set :rvm_ruby_version, '3.0.0'
+set :keep_releases, 2
 set :deploy_to, "/home/app/project/resume/"
+set :puma_nginx, :app
 
 
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/assets}
 
 set :linked_files, %w{config/secrets.yml config/database.yml config/boot.rb config/application.rb}
+
+set :nginx_sites_available_path, "/home/app/nginx.conf"
+#set :nginx_sites_enabled_path, "/home/app/nginx.conf/sites-enabled"
+set :nginx_use_http2, true
+set :nginx_server_name, "petrov-smile.ru"
+set :nginx_ssl_certificate, "/etc/letsencrypt/live/petrov-smile.ru/fullchain.pem"
+set :nginx_ssl_certificate_key, "/etc/letsencrypt/live/petrov-smile.ru/privkey.pem"
+set :puma_enable_socket_service, true
+
 
 
 namespace :setup do
@@ -50,7 +61,8 @@ end
 #   desc 'Запуск Thin'
 #   task :start do
 #     on roles(:app) do
-#       execute "cd #{release_path} && ~/.rvm/bin/rvm default do bundle exec thin -C config/thin.yml -R config.ru -a 127.0.0.1 -p 8080 start  -s3 --socket /home/app/project/resume/shared/tmp/pids/thin.sock --pid /home/app/project/resume/shared/tmp/pids/thin.pid"
+#       #/home/app/project/resume/shared/tmp/sockets/puma.sock
+#       execute "cd #{release_path} && ~/.rvm/bin/rvm 3.0.0 do bundle exec puma -C /home/app/project/resume/shared/puma.rb"
 #     end
 #   end
 #   desc 'Завершение Thin'
@@ -66,12 +78,12 @@ end
 # end
 
 
-namespace :deploy do
+# namespace :deploy do
 
-ask(:message, "Commit message?")
+# ask(:message, "Commit message?")
 
 
-  after :finishing, 'application:stop'
-  after :finishing, 'application:start'
-  after :finishing, :cleanup
-end
+#   after :finishing, 'application:stop'
+#   after :finishing, 'application:start'
+#   after :finishing, :cleanup
+# end
