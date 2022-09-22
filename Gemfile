@@ -5,7 +5,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
+# My gems
+
 group :development do
+  gem 'annotate'
   gem 'capistrano'
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
@@ -20,8 +23,6 @@ end
 group :production do
   gem 'mysql2'
 end
-
-# My gems
 
 gem 'brakeman'
 gem 'coffee-rails'
