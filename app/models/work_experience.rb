@@ -1,5 +1,22 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: work_experiences
+#
+#  id           :bigint           not null, primary key
+#  company_name :string
+#  city         :string
+#  web_site     :string
+#  description  :text
+#  post         :string
+#  start_work   :date
+#  finish_work  :date
+#  what_did_do  :text
+#  what_learned :text
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
 class WorkExperience < ApplicationRecord
   validates :company_name, :post, :city, :start_work, :what_did_do, :what_learned, presence: true
 
