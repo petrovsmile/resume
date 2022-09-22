@@ -14,14 +14,20 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-rvm'
   gem 'capistrano-ssh-doctor', '~> 1.0'
-  gem 'capistrano-npm'
+  gem 'capistrano3-puma'
+
+  gem 'pg'
+
+end
+
+group :production do
+  gem 'mysql2'
 end
 
 gem 'brakeman'
 gem 'coffee-rails'
 gem 'jquery'
 gem 'jquery-rails'
-gem 'pg'
 gem 'puma', '~> 5.0'
 gem 'rails_admin'
 gem 'russian', '~> 0.6.0'
