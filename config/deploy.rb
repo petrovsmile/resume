@@ -1,89 +1,57 @@
-set :repo_url, 'git@github.com:petrovsmile/resume.git'
-set :branch, "main"
-set :application, 'resume'
-application = 'resume'
+# config valid for current version and patch releases of Capistrano
+lock "~> 3.17.1"
+
+set :application, "Resume"
+
+# Default deploy_to directory is /var/www/my_app_name
+set :deploy_to, "/home/app/project/resume"
+
+#Git
+set :repo_url, "git@github.com:petrovsmile/resume.git"
+set :branch, 'main'
+
+#RVM
 set :rvm_type, :user
 set :rvm_ruby_version, '3.0.0'
+
+
+# Default value for :format is :airbrussh.
+# set :format, :airbrussh
+
+# You can configure the Airbrussh format using :format_options.
+# These are the defaults.
+# set :format_options, command_output: true, log_file: "log/capistrano.log", color: :auto, truncate: :auto
+
+# Default value for :pty is false
+# set :pty, true
+
+# Default value for :linked_files is []
+append :linked_files, 'config/master.key'
+
+# Default value for linked_dirs is []
+append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "tmp/webpacker", "public/system", "vendor", "storage"
+
+# Default value for default_env is {}
+# set :default_env, { path: "/opt/ruby/bin:$PATH" }
+
+# Default value for local_user is ENV['USER']
+# set :local_user, -> { `git config user.name`.chomp }
+
+# Default value for keep_releases is 5
 set :keep_releases, 2
-set :deploy_to, "/home/app/project/resume/"
-set :puma_nginx, :app
+
+# Uncomment the following to require manually verifying the host key before first deploy.
+# set :ssh_options, verify_host_key: :secure
 
 
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/assets}
-
-set :linked_files, %w{config/secrets.yml config/database.yml config/boot.rb config/application.rb}
-
-set :nginx_sites_available_path, "/home/app/nginx.conf"
-#set :nginx_sites_enabled_path, "/home/app/nginx.conf/sites-enabled"
-set :nginx_use_http2, true
-set :nginx_server_name, "petrov-smile.ru"
-set :nginx_ssl_certificate, "/etc/letsencrypt/live/petrov-smile.ru/fullchain.pem"
-set :nginx_ssl_certificate_key, "/etc/letsencrypt/live/petrov-smile.ru/privkey.pem"
-set :puma_enable_socket_service, true
-
-
-
-namespace :setup do
-  desc 'Загрузка конфигурационных файлов на удаленный сервер'
-  task :upload_config do
-    on roles :all do
-      execute :mkdir, "-p #{shared_path}"
-      ['shared/config'].each do |f|
-        upload!(f, shared_path, recursive: true)
+namespace :deploy do
+  namespace :check do
+    before :linked_files, :set_master_key do
+      on roles(:app), in: :sequence, wait: 10 do
+        unless test("[ -f #{shared_path}/config/master.key ]")
+          upload! 'config/master.key', "#{shared_path}/config/master.key"
+        end
       end
     end
   end
 end
-
-namespace :nginx do
-  desc 'Создание симлинка в /etc/nginx/conf.d на nginx.conf приложения'
-  task :append_config do
-    on roles :all do
-      sudo :ln, "-fs #{shared_path}/config/nginx.conf /etc/nginx/conf.d/#{fetch(:application)}.conf"
-    end
-  end
-  desc 'Релоад nginx'
-  task :reload do
-    on roles :all do
-      sudo :service, :nginx, :reload
-    end
-  end
-  desc 'Рестарт nginx'
-  task :restart do
-    on roles :all do
-      sudo :service, :nginx, :restart
-    end
-  end
-  after :append_config, :restart
-end
-
-# namespace :application do
-#   desc 'Запуск Thin'
-#   task :start do
-#     on roles(:app) do
-#       #/home/app/project/resume/shared/tmp/sockets/puma.sock
-#       execute "cd #{release_path} && ~/.rvm/bin/rvm 3.0.0 do bundle exec puma -C /home/app/project/resume/shared/puma.rb"
-#     end
-#   end
-#   desc 'Завершение Thin'
-#   task :stop do
-#     on roles(:app) do      
-#       execute "if [ -f /home/app/project/resume/shared/tmp/pids/thin.0.pid ] && [ -e /proc/$(cat /home/app/project/resume/shared/tmp/pids/thin.0.pid) ]; then kill -9 `cat /home/app/project/resume/shared/tmp/pids/thin.0.pid`; fi"
-#       execute "if [ -f /home/app/project/resume/shared/tmp/pids/thin.1.pid ] && [ -e /proc/$(cat /home/app/project/resume/shared/tmp/pids/thin.1.pid) ]; then kill -9 `cat /home/app/project/resume/shared/tmp/pids/thin.1.pid`; fi"
-#       execute "if [ -f /home/app/project/resume/shared/tmp/pids/thin.2.pid ] && [ -e /proc/$(cat /home/app/project/resume/shared/tmp/pids/thin.2.pid) ]; then kill -9 `cat /home/app/project/resume/shared/tmp/pids/thin.2.pid`; fi"
-
-#       execute "cd #{release_path} && ~/.rvm/bin/rvm 2.6.3 do bundle exec rake db:migrate RAILS_ENV=production"
-#     end
-#   end
-# end
-
-
-# namespace :deploy do
-
-# ask(:message, "Commit message?")
-
-
-#   after :finishing, 'application:stop'
-#   after :finishing, 'application:start'
-#   after :finishing, :cleanup
-# end

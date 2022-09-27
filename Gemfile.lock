@@ -96,12 +96,6 @@ GEM
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
-    capistrano-ssh-doctor (1.0.0)
-      capistrano (>= 3.1)
-    capistrano3-puma (5.2.0)
-      capistrano (~> 3.7)
-      capistrano-bundler
-      puma (>= 4.0, < 6.0)
     capybara (3.37.1)
       addressable
       matrix
@@ -332,12 +326,10 @@ DEPENDENCIES
   annotate
   bootsnap
   brakeman
-  capistrano
-  capistrano-bundler
-  capistrano-rails
+  capistrano (~> 3.10)
+  capistrano-bundler (~> 2.0)
+  capistrano-rails (~> 1.6)
   capistrano-rvm
-  capistrano-ssh-doctor (~> 1.0)
-  capistrano3-puma
   capybara
   coffee-rails
   debug
