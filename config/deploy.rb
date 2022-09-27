@@ -14,6 +14,18 @@ set :branch, 'main'
 set :rvm_type, :user
 set :rvm_ruby_version, '3.0.0'
 
+#PUMA
+
+set :puma_nginx, :app
+#set :nginx_sites_available_path, "/home/app/nginx.conf"
+#set :nginx_sites_enabled_path, "/home/app/nginx.conf/sites-enabled"
+set :nginx_use_http2, true
+set :nginx_server_name, "petrov-smile.ru"
+set :nginx_ssl_certificate, "/etc/letsencrypt/live/petrov-smile.ru/fullchain.pem"
+set :nginx_ssl_certificate_key, "/etc/letsencrypt/live/petrov-smile.ru/privkey.pem"
+set :puma_enable_socket_service, true
+set :puma_phased_restart, true
+set :puma_enable_socket_service, true
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
