@@ -15,7 +15,8 @@ development:
 production:
   <<: *mysql
   database: resume
-  password: <%= Rails.application.credentials.dig(:mysql_production, :database_password) %>
+  user: <%= Rails.application.credentials.dig(:mysql_production, :user) %>
+  password: <%= Rails.application.credentials.dig(:mysql_production, :password) %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
