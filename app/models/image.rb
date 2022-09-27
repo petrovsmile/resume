@@ -4,9 +4,13 @@
 #
 #  id          :bigint           not null, primary key
 #  object_type :string
-#  object_id   :bigint
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  object_id   :bigint
+#
+# Indexes
+#
+#  index_images_on_object  (object_type,object_id)
 #
 class Image < ApplicationRecord
   belongs_to :object, polymorphic: true

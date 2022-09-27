@@ -20,18 +20,18 @@
 
         <div class="work_experience_date_info">
             <div class="work_experience_date_info_date work_experience_date_info_date_main start">
-                <%=start_date.strftime('%b %Y')%>
+                <%=I18n.l start_date, format: '%b %Y'%>
             </div>
             <div class="work_experience_date_info_date work_experience_date_info_date_main finish">
-                <%=finish_date.strftime('%b %Y')%>
+                <%=I18n.l finish_date, format: '%b %Y'%>
             </div>
             <div class="work_experience_date_info_range" style="width: <%=range_of_work_position[:width]%>%; left: <%=range_of_work_position[:left]%>%">
                 Период работы
                 <div class="work_experience_date_info_date work_experience_date_info_date_range start">
-                    <%=work_experience.start_work.strftime('%b %Y')%>
+                    <%=I18n.l work_experience.start_work, format: '%b %Y'%> -->
                 </div>
                 <div class="work_experience_date_info_date work_experience_date_info_date_range finish">
-                    <%=work_experience.finish_work.strftime('%b %Y')%>
+                    <-- <%=I18n.l work_experience.finish_work, format: '%b %Y'%>
                 </div>
             </div>
         </div>
@@ -51,7 +51,7 @@
         
         <div class="work_experience_description">
             <div class="work_experience_description_title">
-                Описание проекта: 
+                <span>🗒️</span> Описание проекта: 
             </div>
             <div class="work_experience_description_text">
                 <%=raw work_experience.description%>
@@ -60,7 +60,7 @@
 
         <div class="work_experience_description">
             <div class="work_experience_description_title">
-                Что я делал: 
+                <span>💻</span> Что я делал: 
             </div>
             <div class="work_experience_description_text">
                 <%=raw work_experience.what_did_do.gsub("\n","<br>")%>
@@ -69,7 +69,7 @@
 
         <div class="work_experience_description">
             <div class="work_experience_description_title">
-                Чему научился: 
+                <span>🧠</span> Чему научился: 
             </div>
             <div class="work_experience_description_text">
                 <%=raw work_experience.what_learned.gsub("\n","<br>")%>

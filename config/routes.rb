@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   #JOYSTICK
-  post 'joystick/event' => 'joystick#event'
+  post 'joysticks/event' => 'joysticks#event'
 
   
   resources :joysticks, only: [:show]

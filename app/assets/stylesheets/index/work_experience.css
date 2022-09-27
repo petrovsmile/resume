@@ -86,4 +86,10 @@
 .work_experience_description_title{
   font-weight: bold;
   margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+.work_experience_description_title span{
+  font-size: 25px;
+  margin-right: 10px;  
 }

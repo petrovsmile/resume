@@ -61,7 +61,7 @@ $(document).ready(function(){
       data: {
         buttonCode: buttonCode,
       },
-      url  : '/joystick/event',
+      url  : '/joysticks/event',
       success  : function(response) {
         console.log(response);
       }
