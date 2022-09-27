@@ -2,14 +2,11 @@ postgresql: &postgresql
   adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-  host: localhost
 
 mysql: &mysql
   adapter: mysql2
   encoding: utf8
-  reconnect: false
   pool: 5
-  host: localhost
 
 development:
   <<: *postgresql
@@ -18,8 +15,7 @@ development:
 production:
   <<: *mysql
   database: resume
-  username: <%= Rails.application.credentials.mysql_production_user %>
-  password: <%= Rails.application.credentials.mysql_production_password %>
+  password: <%= Rails.application.credentials.dig(:mysql_production, :database_password) %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
