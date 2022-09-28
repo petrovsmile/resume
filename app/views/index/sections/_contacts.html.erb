@@ -3,6 +3,42 @@
     Контакты
 </div>
 
-<div style="height: 500px">
+<div class="contact_left">
+  <div class="contact_form">
+    <div class="contact_form_title">
+      Написать мне
+    </div>
+    <%= form_with do |form| %>
+      <%= form.label :name, 'Имя' %>
+      <%= form.text_field :name, placeholder: 'Имя' %>
 
+      <%= form.label :email, 'E-mail' %>
+      <%= form.email_field :email, placeholder: 'E-mail' %>
+
+      <%= form.label :message, 'Сообщение' %>
+      <%= form.text_area :message, placeholder: 'Сообщение' %>
+
+      <%= form.submit 'Отправить'%>
+    <% end %>
+  </div>
 </div>
+<div class="contact_right">
+  <div class="contacts">
+    <% @contacts.each do |contact| %>
+      <div class="contact">
+        <a href="<%=contact_link(contact)%>">
+          <div class="contact_icon <%=contact.code%>">
+            
+          </div>
+          <div class="contact_value">
+            <%=contact.value.gsub('https://','')%>
+          </div>
+        </a>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="clear"></div>
+
+
+<div style="height: 500px"></div>

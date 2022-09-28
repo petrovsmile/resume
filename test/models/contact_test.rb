@@ -1,12 +1,18 @@
 # == Schema Information
 #
-# Table name: sections
+# Table name: contacts
 #
 #  id         :bigint           not null, primary key
 #  code       :string
+#  position   :integer
+#  value      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-class Section < ApplicationRecord
-  has_rich_text :content
+require "test_helper"
+
+class ContactTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end

@@ -1,83 +1,107 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_self
+*= require car
+*/
 
- body{
-    margin: 0;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 18px;
- }
+body{
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+}
 
- .left_menu{
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 200px;
-    height: 100%;
-    background: #000;
+input,select,textarea,button{
+  margin: 0;
+  padding: 0;
+	outline: inherit;
+	box-shadow: none;
+	border: none;
+	resize: none;
+	border-radius: 0px;
+	background: #FFF;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+a{
+  color:Navy;
+  text-decoration: none;
+}
+.wrap{
+  position: relative;
+  z-index: 0;
+}
+.clear{
+  clear: both;
+}
+.left_menu{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  background: #000;
 }
 .main_content{
-    float: right;
-    width: calc(100% - 200px);
-    position: relative;
-    overflow: hidden;
+  float: right;
+  width: calc(100% - 200px);
+  position: relative;
+  overflow: hidden;
 }
 .content{
-    z-index: 5;
-    position: relative;
-    max-width: 800px;
-    margin: 0px auto;
-    padding-left: 15px;
-    padding-right: 15px;
+  z-index: 5;
+  position: relative;
+  max-width: 800px;
+  margin: 0px auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .left_menu_avatar{
-    width: 120px;
-    display: block;
-    border-radius: 50%;
-    margin: 15px auto;
+  width: 120px;
+  display: block;
+  border-radius: 50%;
+  margin: 15px auto;
 }
 .main_menu{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    margin-top: 30px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: 30px;
 }
 .main_menu li{
-    display: block;
-    margin-bottom: 15px;
-    font-size: 16px;
-    color: #FFF;
+  display: block;
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #FFF;
 }
 .main_menu li:hover a{
-    text-decoration: underline;
+  text-decoration: underline;
 }
 .main_menu a{
-    color: #FFF;
-    text-decoration: none;
+  color: #FFF;
+  text-decoration: none;
 }
 .main_menu li.active:after{
-    content: " <--";
-    color: orange;
+  content: " <--";
+  color: orange;
 }
 
 .title_section{
-    font-weight: bold;
-    margin-top: 100px;
-    font-size: 25px;
+  font-weight: bold;
+  margin-top: 100px;
+  font-size: 25px;
 }
 .title_section:after{
-    content: "<--";
-    color: orange;
+  content: "<--";
+  color: orange;
 }

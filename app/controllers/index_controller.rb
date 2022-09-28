@@ -8,5 +8,7 @@ class IndexController < ApplicationController
     if @work_experiences_finish_date < @work_experiences.last.finish_work
       @work_experiences_finish_date = @work_experiences.last.finish_work + 1.month
     end
+
+    @contacts = Contact.all.order(position: :asc)
   end
 end

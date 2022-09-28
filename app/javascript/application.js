@@ -1,11 +1,11 @@
 //= require jquery
 //= require jquery_ujs
+//= require car
+
 //= require channels/index
 
 
 $(document).ready(function(){
-
-  
 
   $('.main_menu a').click(function(e){
       e.preventDefault();
@@ -47,3 +47,4 @@ $(document).ready(function(){
   }
   
 });
+

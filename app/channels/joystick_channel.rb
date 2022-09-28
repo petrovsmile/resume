@@ -1,9 +1,7 @@
 class JoystickChannel < ApplicationCable::Channel
 
-  
-
   def subscribed
-    stream_from "joystick_events"
+    stream_from "joystick_channel_#{params[:joystick_channel]}"
   end
 
   def unsubscribed

@@ -1,0 +1,78 @@
+.contact{
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+.contact a{
+  color: #000;
+  overflow: hidden;
+  float: left;
+  display: block;
+}
+.contact_icon{
+  float: left;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+}
+.contact_icon.phone {
+  background-image: url(/img/index/contacts/phone.svg);
+}
+.contact_icon.email {
+  background-image: url(/img/index/contacts/email.svg);
+}
+.contact_icon.vk {
+  background-image: url(/img/index/contacts/vk.svg);
+}
+.contact_icon.inst {
+  background-image: url(/img/index/contacts/inst.svg);
+}
+.contact_icon.github {
+  background-image: url(/img/index/contacts/github.svg);
+}
+.contact_value{
+  float: left;
+  margin-left: 10px;
+  line-height: 40px;
+}
+
+.contact_left{
+  float: left;
+  width: calc(50% - 30px);
+  margin-top: 100px;
+}
+.contact_right{
+  float: right;
+  width: calc(50% - 30px);
+  margin-top: 110px;
+}
+.contact_form_title{
+  font-size: 25px;
+}
+.contact_form label{
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+.contact_form input{
+  height: 35px;
+  text-indent: 10px;
+  border: 1px solid #ddd;
+  display: block;
+  width: 100%;
+  font-size: 16px;
+}
+.contact_form  textarea{
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  display: block;
+  width: calc(100% - 22px);
+  font-size: 16px;
+}
+.contact_form input[type="submit"]{
+  color: #FFF;
+  background: #000;
+  margin-top: 15px;
+}

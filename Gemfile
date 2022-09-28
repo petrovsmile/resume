@@ -23,6 +23,7 @@ group :production do
   gem 'mysql2'
 end
 
+gem 'ancestry'
 gem 'brakeman'
 gem 'coffee-rails'
 gem 'jquery'
@@ -97,3 +98,4 @@ group :test do
   gem 'webdrivers'
 end
 gem 'sassc-rails'
+gem "sassc-rails"

@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Петров Александр. Резюме.</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Петров Александр. Резюме.</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "#{controller_name}/#{action_name}", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "#{controller_name}/#{action_name}", "data-turbo-track": "reload" %>
 
-    <%= javascript_include_tag "application",:defer => "defer" %>
-    <%= javascript_include_tag "#{controller_name}/#{action_name}",:defer => "defer" %>
-  
-  </head>
+  <%= javascript_include_tag "application",:defer => "defer" %>
+  <%= javascript_include_tag "#{controller_name}/#{action_name}",:defer => "defer" %>
 
-  <body>
+</head>
 
+<body>
+
+  <%= render 'layouts/car' %>
+
+  <div class="wrap">
     <div class="left_menu">
       <div class="content">
         <a href="/">
@@ -39,6 +42,11 @@
             <a href="/#contacts">Контакты</a>
           </li>
         </ul>
+        
+        <p>
+          <a href="/joystick" target="_blank">JOYSTICK #<%= @joystick.id %></a>
+        </p>
+        <input type="hidden" name="joystick_hash" value="<%= @joystick.hash_code %>">
       </div>
     </div>
 
@@ -46,8 +54,7 @@
       <div class="content">
         <%= yield %>
       </div>
-    </div>    
-  </body>
-
-  
+    </div> 
+  </div>   
+</body>
 </html>

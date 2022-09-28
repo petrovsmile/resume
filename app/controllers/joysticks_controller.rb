@@ -1,11 +1,10 @@
 class JoysticksController < ApplicationController
   def event
-    JoystickChannel.broadcast_to "joystick_events", { buttonCode: params[:buttonCode] }
+    ActionCable.server.broadcast "joystick_channel_#{@joystick.hash_code}", { buttonCode: params[:buttonCode] }
 
     render json: 'ok'
   end
   
   def show
-    @joystick = Joystick.find(params[:id])
   end
 end
