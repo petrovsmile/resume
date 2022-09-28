@@ -44,7 +44,7 @@
         </ul>
         
         <p>
-          <a href="/joystick" target="_blank">JOYSTICK #<%= @joystick.id %></a>
+          <a href="/joystick/<%= @joystick.hash_code %>" target="_blank">JOYSTICK #<%= @joystick.id %></a>
         </p>
         <input type="hidden" name="joystick_hash" value="<%= @joystick.hash_code %>">
       </div>

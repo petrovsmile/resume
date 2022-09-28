@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   #JOYSTICK
-  get 'joystick' => 'joysticks#show'
+  get 'joystick/:hash_code' => 'joysticks#show'
   post 'joysticks/event' => 'joysticks#event'
 
 

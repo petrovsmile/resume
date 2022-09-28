@@ -59,6 +59,7 @@ $(document).ready(function(){
       cache    : false,
       async    : true,
       data: {
+        hash_code: $('input[name="hash_code"]').val(),
         buttonCode: buttonCode,
       },
       url  : '/joysticks/event',
