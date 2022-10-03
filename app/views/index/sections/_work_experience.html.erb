@@ -54,7 +54,7 @@
                 <span>🗒️</span> Описание проекта: 
             </div>
             <div class="work_experience_description_text">
-                <%=raw work_experience.description%>
+                <%= work_experience.description %>
             </div>
         </div>
 
@@ -63,7 +63,7 @@
                 <span>💻</span> Что я делал: 
             </div>
             <div class="work_experience_description_text">
-                <%=raw work_experience.what_did_do.gsub("\n","<br>")%>
+                <%= work_experience.what_did_do %>
             </div>
         </div>
 
@@ -72,7 +72,7 @@
                 <span>🧠</span> Чему научился: 
             </div>
             <div class="work_experience_description_text">
-                <%=raw work_experience.what_learned.gsub("\n","<br>")%>
+                <%= work_experience.what_learned %>
             </div>
         </div>
         

@@ -39,7 +39,7 @@
                 <span>🗒️</span> Описание проекта: 
             </div>
             <div class="portfolio_description_text">
-                <%=raw portfolio.description%>
+                <%= portfolio.description %>
             </div>
         </div>
 
@@ -48,7 +48,7 @@
                 <span>💻</span> Что я сделал: 
             </div>
             <div class="portfolio_description_text">
-                <%=raw portfolio.what_did_do.gsub("\n","<br>")%>
+                <%= portfolio.what_did_do %>
             </div>
         </div>
     </div>  
