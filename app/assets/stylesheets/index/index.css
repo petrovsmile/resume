@@ -25,9 +25,14 @@
 }
 
 h1{
-    font-size: 25px;
+    font-size: 25px !important;
     font-weight: normal;
+    margin-bottom: 30px !important;
 }
 .index_text_section{
     margin-top: 100px;
+    
+}
+.index_text_section .trix-content{
+    font-size: 18px !important;
 }
