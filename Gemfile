@@ -16,18 +16,20 @@ group :development do
   gem 'capistrano3-puma'
 end
 
-gem 'pg'
+
+
 gem 'ancestry'
 gem 'brakeman'
 gem 'coffee-rails'
 gem 'jquery'
 gem 'jquery-rails'
+gem 'pg'
 gem 'puma', '~> 5.0'
 gem 'rails_admin'
 gem 'russian', '~> 0.6.0'
 gem 'rubocop', require: false
 gem 'rubocop-rails', require: false
-
+gem 'ruby-vips'
 
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
