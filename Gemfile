@@ -29,7 +29,7 @@ gem 'rails_admin'
 gem 'russian', '~> 0.6.0'
 gem 'rubocop', require: false
 gem 'rubocop-rails', require: false
-gem 'ruby-vips'
+gem 'rmagick'
 
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
