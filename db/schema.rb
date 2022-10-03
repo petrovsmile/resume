@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_27_180239) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_03_142646) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -65,6 +65,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_27_180239) do
     t.bigint "object_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "caption"
     t.index ["object_type", "object_id"], name: "index_images_on_object"
   end
 
@@ -77,12 +78,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_27_180239) do
   create_table "portfolios", force: :cascade do |t|
     t.string "name"
     t.string "web_site"
-    t.text "preview"
-    t.text "description"
-    t.text "what_did_do"
-    t.text "what_learned"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "position"
   end
 
   create_table "portfolios_stacks", id: false, force: :cascade do |t|
@@ -115,12 +113,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_27_180239) do
     t.string "company_name"
     t.string "city"
     t.string "web_site"
-    t.text "description"
     t.string "post"
     t.date "start_work"
     t.date "finish_work"
-    t.text "what_did_do"
-    t.text "what_learned"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

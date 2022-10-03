@@ -12,6 +12,8 @@
 *
 *= require_self
 *= require car
+*= require plugin/glightbox
+
 */
 
 body{

@@ -5,22 +5,23 @@
 # Table name: work_experiences
 #
 #  id           :bigint           not null, primary key
-#  company_name :string
 #  city         :string
-#  web_site     :string
-#  description  :text
+#  company_name :string
+#  finish_work  :date
 #  post         :string
 #  start_work   :date
-#  finish_work  :date
-#  what_did_do  :text
-#  what_learned :text
+#  web_site     :string
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
 class WorkExperience < ApplicationRecord
-  validates :company_name, :post, :city, :start_work, :what_did_do, :what_learned, presence: true
+  validates :company_name, :post, :city, :start_work, presence: true
 
   has_and_belongs_to_many :stacks
+
+  has_rich_text :description
+  has_rich_text :what_did_do
+  has_rich_text :what_learned
 
   def range_of_work_position(start_date,finish_date)
     start_date = start_date.beginning_of_month

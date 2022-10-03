@@ -11,6 +11,8 @@ class IndexController < ApplicationController
       @work_experiences_finish_date = @work_experiences.last.finish_work + 1.month
     end
 
+    @portfolios = Portfolio.all.order(position: :asc)
+
     @contacts = Contact.all.order(position: :asc)
   end
   
@@ -30,5 +32,4 @@ class IndexController < ApplicationController
     end
   end
 
-  
 end

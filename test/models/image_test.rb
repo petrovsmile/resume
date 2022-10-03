@@ -3,6 +3,7 @@
 # Table name: images
 #
 #  id          :bigint           not null, primary key
+#  caption     :string
 #  object_type :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null

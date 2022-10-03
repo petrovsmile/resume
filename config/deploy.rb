@@ -21,6 +21,7 @@ set :puma_nginx, :app
 #set :nginx_sites_enabled_path, "/home/app/nginx.conf/sites-enabled"
 set :nginx_use_http2, true
 set :nginx_server_name, "petrov-smile.ru"
+set :nginx_use_ssl, true
 set :nginx_ssl_certificate, "/etc/letsencrypt/live/petrov-smile.ru/fullchain.pem"
 set :nginx_ssl_certificate_key, "/etc/letsencrypt/live/petrov-smile.ru/privkey.pem"
 set :puma_enable_socket_service, true

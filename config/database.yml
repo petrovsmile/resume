@@ -1,26 +1,21 @@
-postgresql: &postgresql
+default: &default
   adapter: postgresql
+  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
-
-mysql: &mysql
-  adapter: mysql2
-  encoding: utf8
-  pool: 5
 
 development:
-  <<: *postgresql
+  <<: *default
   database: resume
 
 production:
-  <<: *mysql
+  <<: *default
   database: resume
-  username: <%= Rails.application.credentials.dig(:mysql_production, :user) %>
-  password: <%= Rails.application.credentials.dig(:mysql_production, :password) %>
+  username: <%= Rails.application.credentials.dig(:pg_production, :user) %>
+  password: <%= Rails.application.credentials.dig(:pg_production, :password) %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *postgresql
+  <<: *default
   database: resume-test

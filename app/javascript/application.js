@@ -1,11 +1,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require car
+//= require plugin/glightbox
 
 //= require channels/index
 
 
 $(document).ready(function(){
+
+  var lightbox = GLightbox({});
 
   $('.main_menu a').click(function(e){
       e.preventDefault();

@@ -5,15 +5,12 @@
 # Table name: work_experiences
 #
 #  id           :bigint           not null, primary key
-#  company_name :string
 #  city         :string
-#  web_site     :string
-#  description  :text
+#  company_name :string
+#  finish_work  :date
 #  post         :string
 #  start_work   :date
-#  finish_work  :date
-#  what_did_do  :text
-#  what_learned :text
+#  web_site     :string
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
