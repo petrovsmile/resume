@@ -9,20 +9,14 @@ ruby '3.0.0'
 
 group :development do
   gem 'annotate'
-  gem 'pg'
-
   gem "capistrano", "~> 3.10", require: false
   gem 'capistrano-bundler', '~> 2.0'
   gem "capistrano-rails", "~> 1.6", require: false
   gem 'capistrano-rvm'
   gem 'capistrano3-puma'
-
 end
 
-group :production do
-  gem 'mysql2'
-end
-
+gem 'pg'
 gem 'ancestry'
 gem 'brakeman'
 gem 'coffee-rails'
