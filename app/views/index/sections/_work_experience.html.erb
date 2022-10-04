@@ -55,14 +55,16 @@
           </div>
         <% end %>
         
-        <div class="work_experience_description">
-            <div class="work_experience_description_title">
-                <span>🗒️</span> Описание проекта: 
+        <% if work_experience.description.present? %>
+            <div class="work_experience_description">
+                <div class="work_experience_description_title">
+                    <span>🗒️</span> Описание проекта: 
+                </div>
+                <div class="work_experience_description_text">
+                    <%= work_experience.description %>
+                </div>
             </div>
-            <div class="work_experience_description_text">
-                <%= work_experience.description %>
-            </div>
-        </div>
+        <% end %>
 
         <div class="work_experience_description">
             <div class="work_experience_description_title">
