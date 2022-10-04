@@ -5,7 +5,7 @@
 
 <% work_experiences.each_with_index do |work_experience, index|
     range_of_work_position = work_experience.range_of_work_position(start_date,finish_date)
-    stacks = work_experience.stack
+    stacks = work_experience.stacks
     %> 
     <div class="work_experience">  
 
