@@ -14,7 +14,7 @@ module IndexHelper
     if contact.code == 'email'
       return "mailto:#{value}"
     end
-    if ['vk', 'inst', 'github'].include? contact.code
+    if ['vk', 'inst', 'github', 'tlgrm'].include? contact.code
       return value
     end
   end

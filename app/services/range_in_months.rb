@@ -1,14 +1,14 @@
 class RangeInMonths
-  def initialize(start, finish)
-    @start = start
-    @finish = finish
+  def initialize(start_date, finish_date)
+    @start_date = start_date
+    @finish_date = finish_date
   end
 
   def call
     count = 0
-    while @start < @finish
+    while @start_date < @finish_date
       count += 1
-      @start += 1.month
+      @start_date += 1.month
     end
     count
   end

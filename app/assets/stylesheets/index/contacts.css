@@ -10,8 +10,8 @@
 }
 .contact_icon{
   float: left;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 10px;
   background-size: cover;
   background-position: center;
@@ -31,10 +31,13 @@
 .contact_icon.github {
   background-image: url(/img/index/contacts/github.svg);
 }
+.contact_icon.tlgrm {
+  background-image: url(/img/index/contacts/tlgrm.svg);
+}
 .contact_value{
   float: left;
   margin-left: 10px;
-  line-height: 40px;
+  line-height: 30px;
 }
 
 .contact_left{
@@ -75,4 +78,14 @@
   color: #FFF;
   background: #000;
   margin-top: 15px;
+}
+
+@media screen and (max-width: 1000px){
+  .contact_left{
+    width: 100%;
+  }
+  .contact_right{
+    width: 100%;
+    margin-top: 50px;
+  }
 }
