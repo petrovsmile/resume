@@ -10,9 +10,11 @@
             #<%=(index + 1)%>
             <b><%=portfolio.name%></b>
         </div>
-        <a href="<%=portfolio.web_site%>" target="_blank" class="portfolio_website">
-            🔗 <%=URI(portfolio.web_site).host%>
-        </a>
+        <% if portfolio.web_site.present? %>
+            <a href="<%=portfolio.web_site%>" target="_blank" class="portfolio_website">
+                🔗 <%=URI(portfolio.web_site).host%>
+            </a>
+        <% end %>
 
         <div class="portfolio_description">
           <div class="portfolio_description_title">
