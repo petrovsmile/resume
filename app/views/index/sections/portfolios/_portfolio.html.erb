@@ -1,0 +1,45 @@
+<div class="portfolio">  
+
+    <div class="portfolio_name">
+        #<%=(portfolio_counter + 1)%>
+        <b><%=portfolio.name%></b>
+    </div>
+    <% if portfolio.web_site.present? %>
+        <a href="<%=portfolio.web_site%>" target="_blank" class="portfolio_website">
+            🔗 <%=URI(portfolio.web_site).host%>
+        </a>
+    <% end %>
+
+    <div class="portfolio_description">
+        <div class="portfolio_description_title">
+            <span>🗒️</span> Описание проекта: 
+        </div>
+        <div class="portfolio_description_text">
+            <%= portfolio.description %>
+        </div>
+    </div>
+
+    <div class="portfolio_stacks">
+        <div class="portfolio_stacks_title">
+            Стек:
+        </div>
+        <% portfolio.stacks.order(name: :asc).each do |stack| %>
+            <div class="portfolio_stack"><%=stack.name%></div>
+        <% end %>
+    </div>
+    
+    
+    <div class="portfolio_images">
+        <% portfolio.images.order(id: :asc).each do |image| %>
+            <a  href="<%= url_for(image.src.variant(:detail))%>" 
+                data-gallery="portfolio_<%= portfolio.id %>" 
+                style="background-image: url(<%= url_for(image.src.variant(:thumb))%>)"
+                class="glightbox portfolio_image">
+                <div class="portfolio_image_caption">
+                    <%= image.caption %>
+                </div>
+            </a>
+        <% end %>
+    </div>
+
+</div> 

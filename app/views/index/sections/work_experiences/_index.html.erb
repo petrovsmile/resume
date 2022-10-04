@@ -1,0 +1,13 @@
+<a name="work_experience" class="js-scroll-section"></a>
+<div class="title_section">
+    Опыт работы
+</div>
+
+
+<%= render  partial: 'index/sections/work_experiences/work_experience',
+            collection: work_experiences,
+            locals: {
+              start_date: start_date,
+              finish_date: finish_date
+            },
+            spacer_template: 'index/sections/work_experiences/work_experience_ruler' %>

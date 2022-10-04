@@ -17,8 +17,6 @@
 
 <body>
 
-  <%= render 'layouts/car' %>
-
   <div class="wrap">
     <div class="left_menu">
       <div class="content">
@@ -42,11 +40,6 @@
             <a href="/#contacts">Контакты</a>
           </li>
         </ul>
-        
-        <p>
-          <a href="/joystick/<%= @joystick.hash_code %>" target="_blank">JOYSTICK #<%= @joystick.id %></a>
-        </p>
-        <input type="hidden" name="joystick_hash" value="<%= @joystick.hash_code %>">
       </div>
     </div>
 

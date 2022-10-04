@@ -1,5 +1,10 @@
-.portfolio{
-  margin-top: 30px;
+.portfolio_ruller{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  color: lightcoral;
 }
 .portfolio_name{
   font-size: 22px;
@@ -47,17 +52,19 @@
 }
 .portfolio_images{
   overflow: hidden;
+  margin-top: 20px;
+  border: 2px solid #000;
+  background: #000;
 }
 .portfolio_image{
-  margin-top: 15px;
   float: left;
-  margin-right: 15px;
   border: 2px solid #000;
-  padding-bottom: 20px;
+  box-sizing: border-box;
   position: relative;
-}
-.portfolio_image img{
-  height: 100px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  width: 33.33%;
 }
 .portfolio_image_caption{
   position: absolute;
@@ -66,7 +73,7 @@
   width: calc(100% - 20px);
   text-align: center;
   color: #FFF;
-  background-color: #000;
+  background-color: rgba(0,0,0,0.7);
   font-size: 12px;
   line-height: 20px;
   overflow: hidden;
