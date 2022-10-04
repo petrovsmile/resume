@@ -8,6 +8,7 @@
 #  city         :string
 #  company_name :string
 #  finish_work  :date
+#  period       :string
 #  post         :string
 #  start_work   :date
 #  web_site     :string

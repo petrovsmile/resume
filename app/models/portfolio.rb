@@ -16,7 +16,5 @@ class Portfolio < ApplicationRecord
   has_many :images, as: :object
   
   has_rich_text :description
-  has_rich_text :what_did_do
-  has_rich_text :what_learned
   
 end

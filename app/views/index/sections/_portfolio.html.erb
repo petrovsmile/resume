@@ -14,8 +14,27 @@
             🔗 <%=URI(portfolio.web_site).host%>
         </a>
 
+        <div class="portfolio_description">
+          <div class="portfolio_description_title">
+              <span>🗒️</span> Описание проекта: 
+          </div>
+          <div class="portfolio_description_text">
+              <%= portfolio.description %>
+          </div>
+        </div>
+
+        <div class="portfolio_stacks">
+          <div class="portfolio_stacks_title">
+              Стек:
+          </div>
+          <% portfolio.stacks.order(name: :asc).each do |stack| %>
+              <div class="portfolio_stack"><%=stack.name%></div>
+          <% end %>
+        </div>
+        
+        
         <div class="portfolio_images">
-            <% portfolio.images.each do |image| %>
+            <% portfolio.images.order(id: :asc).each do |image| %>
                 <a href="<%= url_for(image.src.variant(:detail))%>" data-gallery="portfolio_<%= portfolio.id %>" class="glightbox portfolio_image">
                     <img src="<%= url_for(image.src.variant(:thumb))%>" alt="">
                     <div class="portfolio_image_caption">
@@ -25,31 +44,5 @@
             <% end %>
         </div>
 
-        <div class="portfolio_stacks">
-          <div class="portfolio_stacks_title">
-            Стек:
-          </div>
-          <% portfolio.stacks.order(name: :asc).each do |stack| %>
-              <div class="portfolio_stack"><%=stack.name%></div>
-          <% end %>
-        </div>
-        
-        <div class="portfolio_description">
-            <div class="portfolio_description_title">
-                <span>🗒️</span> Описание проекта: 
-            </div>
-            <div class="portfolio_description_text">
-                <%= portfolio.description %>
-            </div>
-        </div>
-
-        <div class="portfolio_description">
-            <div class="portfolio_description_title">
-                <span>💻</span> Что я сделал: 
-            </div>
-            <div class="portfolio_description_text">
-                <%= portfolio.what_did_do %>
-            </div>
-        </div>
     </div>  
 <% end %>

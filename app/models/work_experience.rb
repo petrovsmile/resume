@@ -8,6 +8,7 @@
 #  city         :string
 #  company_name :string
 #  finish_work  :date
+#  period       :string
 #  post         :string
 #  start_work   :date
 #  web_site     :string
@@ -15,7 +16,7 @@
 #  updated_at   :datetime         not null
 #
 class WorkExperience < ApplicationRecord
-  validates :company_name, :post, :city, :start_work, presence: true
+  validates :company_name, :city, :period, :start_work, presence: true
 
   has_and_belongs_to_many :stacks
 
