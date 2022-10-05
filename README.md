@@ -37,13 +37,18 @@
 
 **Телефон**  
 +7 (920) 429-15-72  
+  
 **Почта**  
 hello@petrov-smile.ru  
+  
 **Telegram**  
 t.me/petrov_smile  
+  
 **Вконтакте**  
 vk.com/petrov_smile  
+  
 **Вконтакте группа**  
 vk.com/petrov_smile_dev  
+  
 **Instagram**  
 instagram.com/petrov_smile/
