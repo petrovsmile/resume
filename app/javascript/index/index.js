@@ -28,8 +28,8 @@ $(document).ready(function(){
         data: $(this).serialize(),
         url  : '/send_contact_form',
         success  : function(response) {
-          // $('.form_thanks').slideDown();
-          // $('form').slideUp();
+          $('.form_thanks').slideDown();
+          $('form').slideUp();
         }
       });
     }
