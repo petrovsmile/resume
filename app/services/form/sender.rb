@@ -20,10 +20,10 @@ module Form
     private
 
     def text_message(name, email, message)
-      "Написали с сайта petrov-smile.ru<br>
-      Имя: #{name}<br>
-      Email: #{email}<br>
-      Сообщение: #{message}<br>"
+      text_message = 'Написали с сайта petrov-smile.ru<br>'
+      text_message += "Имя: #{name}<br>"
+      text_message += "Email: #{email}<br>"
+      text_message += "Сообщение: #{message}<br>"
     end
   end
 end
