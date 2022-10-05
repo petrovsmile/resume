@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: contacts
@@ -10,5 +12,5 @@
 #  updated_at :datetime         not null
 #
 class Contact < ApplicationRecord
-  validates :value, presence: :true
+  validates :value, presence: true
 end

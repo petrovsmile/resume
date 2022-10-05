@@ -8,14 +8,9 @@ module IndexHelper
 
   def contact_link(contact)
     value = contact.value
-    if contact.code == 'phone'
-      return "tel:#{value.gsub(' ','').gsub('(','').gsub(')','').gsub('-','')}"
-    end
-    if contact.code == 'email'
-      return "mailto:#{value}"
-    end
-    if ['vk', 'inst', 'github', 'tlgrm'].include? contact.code
-      return value
-    end
+    return "tel:#{value.gsub(' ', '').gsub('(', '').gsub(')', '').gsub('-', '')}" if contact.code == 'phone'
+    return "mailto:#{value}" if contact.code == 'email'
+
+    value if %w[vk inst github tlgrm].include? contact.code
   end
 end

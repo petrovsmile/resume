@@ -33,8 +33,10 @@
         <% portfolio.images.order(id: :asc).each do |image| %>
             <a  href="<%= url_for(image.src.variant(:detail))%>" 
                 data-gallery="portfolio_<%= portfolio.id %>" 
-                style="background-image: url(<%= url_for(image.src.variant(:thumb))%>)"
                 class="glightbox portfolio_image">
+                <div class="portfolio_image_container" style="background-image: url(<%= url_for(image.src.variant(:thumb))%>)">
+
+                </div>
                 <div class="portfolio_image_caption">
                     <%= image.caption %>
                 </div>

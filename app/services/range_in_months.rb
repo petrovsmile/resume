@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RangeInMonths
   def initialize(start_date, finish_date)
     @start_date = start_date

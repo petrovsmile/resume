@@ -22,5 +22,17 @@ module PetrovSmile
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.action_mailer.default_url_options = { :host => 'pervichka.pro' }
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+        :address => 'connect.smtp.bz',
+        :port => 2525,
+        :domain => 'pervichka.pro',
+        :authentication => :login,
+        :user_name => 'admin@pervichka.pro',
+        :password => 'KO8d0vYWYWgX'
+    }
+    
   end
 end

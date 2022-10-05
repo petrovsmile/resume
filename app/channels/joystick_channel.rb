@@ -1,5 +1,6 @@
-class JoystickChannel < ApplicationCable::Channel
+# frozen_string_literal: true
 
+class JoystickChannel < ApplicationCable::Channel
   def subscribed
     stream_from "joystick_channel_#{params[:joystick_channel]}"
   end

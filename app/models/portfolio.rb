@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: portfolios
@@ -10,11 +12,10 @@
 #  updated_at :datetime         not null
 #
 class Portfolio < ApplicationRecord
-  validates :name, presence: :true
-  
+  validates :name, presence: true
+
   has_and_belongs_to_many :stacks
-  has_many :images, as: :object
-  
+  has_many :images, dependent: :destroy, as: :object
+
   has_rich_text :description
-  
 end

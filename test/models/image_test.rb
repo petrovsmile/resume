@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: images
@@ -13,7 +15,7 @@
 #
 #  index_images_on_object  (object_type,object_id)
 #
-require "test_helper"
+require 'test_helper'
 
 class ImageTest < ActiveSupport::TestCase
   # test "the truth" do

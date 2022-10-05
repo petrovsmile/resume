@@ -9,28 +9,23 @@ ruby '3.0.0'
 
 group :development do
   gem 'annotate'
-  gem "capistrano", "~> 3.10", require: false
-  gem 'capistrano-bundler', '~> 2.0'
-  gem "capistrano-rails", "~> 1.6", require: false
-  gem 'capistrano-rvm'
+  gem 'capistrano', '~> 3.10', require: false
   gem 'capistrano3-puma'
+  gem 'capistrano-bundler', '~> 2.0'
+  gem 'capistrano-rails', '~> 1.6', require: false
+  gem 'capistrano-rvm'
 end
-
-
 
 gem 'ancestry'
 gem 'brakeman'
 gem 'coffee-rails'
 gem 'jquery'
 gem 'jquery-rails'
+gem 'mini_magick'
 gem 'pg'
-gem 'puma', '~> 5.0'
 gem 'rails_admin'
-gem 'russian', '~> 0.6.0'
 gem 'rubocop', require: false
 gem 'rubocop-rails', require: false
-gem "mini_magick"
-
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4'
@@ -66,10 +61,10 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
 
 # Use Sass to process CSS
-# gem "sassc-rails"
+gem 'sassc-rails'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-gem "image_processing", "~> 1.2"
+gem 'image_processing', '~> 1.2'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -93,5 +88,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-gem 'sassc-rails'
-gem "sassc-rails"

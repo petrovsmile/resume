@@ -1,10 +1,5 @@
 //= require jquery
 //= require jquery_ujs
-//= require car
-//= require plugin/glightbox
-
-//= require channels/index
-
 
 $(document).ready(function(){
 

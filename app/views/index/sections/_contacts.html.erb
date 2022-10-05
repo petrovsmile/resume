@@ -8,6 +8,9 @@
     <div class="contact_form_title">
       Написать мне
     </div>
+    <div class="form_thanks">
+       Я уже получил сообщение<br> и спешу на него ответить. 
+    </div>
     <%= form_with do |form| %>
       <%= form.label :name, 'Имя' %>
       <%= form.text_field :name, placeholder: 'Имя' %>
@@ -18,7 +21,10 @@
       <%= form.label :message, 'Сообщение' %>
       <%= form.text_area :message, placeholder: 'Сообщение' %>
 
-      <%= form.submit 'Отправить'%>
+      <div class="error_form_fields">
+        Заполни, пожалуйста, все поля
+      </div>
+      <%= form.button 'Отправить'%>
     <% end %>
   </div>
 </div>

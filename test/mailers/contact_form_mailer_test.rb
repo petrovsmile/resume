@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class JoysticksControllerTest < ActionDispatch::IntegrationTest
+class ContactFormMailerTest < ActionMailer::TestCase
   # test "the truth" do
   #   assert true
   # end

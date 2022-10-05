@@ -13,5 +13,11 @@ Style/Documentation:
 Metrics/MethodLength:
   Max: 30
 
+Metrics/AbcSize:
+  Max: 30
+
 Rails/HasAndBelongsToMany:
+  Enabled: false
+
+Rails/I18nLocaleTexts:
   Enabled: false

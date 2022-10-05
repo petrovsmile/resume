@@ -74,12 +74,31 @@
   width: calc(100% - 22px);
   font-size: 16px;
 }
-.contact_form input[type="submit"]{
+.contact_form button{
+  height: 35px;
+  text-indent: 10px;
+  border: 1px solid #ddd;
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  display: block;
   color: #FFF;
   background: #000;
   margin-top: 15px;
+  cursor: pointer;
 }
-
+.error_form_fields{
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+  color: red;
+  display: none;
+}
+.form_thanks{
+  text-align: center;
+  margin-top: 50px;
+  display: none;
+}
 @media screen and (max-width: 1000px){
   .contact_left{
     width: 100%;
