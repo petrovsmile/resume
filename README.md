@@ -42,13 +42,13 @@
 hello@petrov-smile.ru  
   
 **Telegram**  
-t.me/petrov_smile  
+[t.me/petrov_smile](https://t.me/petrov_smile)  
   
 **Вконтакте**  
-vk.com/petrov_smile  
+[vk.com/petrov_smile](https://vk.com/petrov_smile)  
   
 **Вконтакте группа**  
-vk.com/petrov_smile_dev  
+[vk.com/petrov_smile_dev](https://vk.com/petrov_smile_dev)  
   
 **Instagram**  
-instagram.com/petrov_smile/
+[instagram.com/petrov_smile](https://www.instagram.com/petrov_smile)
