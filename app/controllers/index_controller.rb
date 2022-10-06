@@ -5,7 +5,7 @@ class IndexController < ApplicationController
 
   def index
     @work_experiences = WorkExperience.all.order(start_work: :desc)
-    @work_experiences_start_date = Date.parse('2011-01-01')
+    @work_experiences_start_date = Time.parse('2011-01-01')
     @work_experiences_finish_date = Time.zone.today.end_of_month
     if @work_experiences_finish_date < @work_experiences.last.finish_work
       @work_experiences_finish_date = @work_experiences.last.finish_work + 1.month
