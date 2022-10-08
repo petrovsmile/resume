@@ -17,7 +17,7 @@ set :rvm_ruby_version, '3.0.0'
 #PUMA
 
 set :puma_nginx, :app
-#set :nginx_sites_available_path, "/home/app/nginx.conf"
+set :nginx_sites_available_path, "/home/app/nginx.conf"
 #set :nginx_sites_enabled_path, "/home/app/nginx.conf/sites-enabled"
 set :nginx_use_http2, true
 set :nginx_server_name, "petrov-smile.ru"

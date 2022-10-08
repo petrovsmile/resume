@@ -38,6 +38,10 @@
   float: left;
   margin-left: 10px;
   line-height: 30px;
+  width: calc(100% - 40px);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .contact_left{
@@ -106,5 +110,10 @@
   .contact_right{
     width: 100%;
     margin-top: 50px;
+  }
+}
+@media screen and (max-width: 600px){
+  .contact_value{
+    font-size: 14px;
   }
 }

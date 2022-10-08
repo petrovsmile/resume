@@ -82,3 +82,9 @@
   padding-right: 10px;
   height: 20px;
 }
+
+@media screen and (max-width: 600px){
+  .portfolio_image{
+    width: 100%;
+  }
+}
