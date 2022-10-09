@@ -22,8 +22,8 @@
 }
 .work_experience_date_info_range{
   left: 25%;
-  min-width: 240px;
   height: 20px;
+  min-width: 100px;
   background-color: palegreen;
   position: absolute;
   top: 0;
@@ -34,12 +34,10 @@
 .work_experience_date_info_date{
   position: absolute;
   font-size: 14px;
+  white-space: nowrap;
 }
 .work_experience_date_info_date.start{
   left: 0;
-}
-.work_experience_date_info_date.finish{
-  right: 0;
 }
 .work_experience_date_info_date_main{
   top: calc(100% + 5px);
@@ -47,6 +45,10 @@
 .work_experience_date_info_date_range{
   bottom: calc(100% + 5px);
   font-weight: bold;
+}
+.work_experience_date_info_date.finish{
+  right: 0;
+  bottom: calc(100% + 20px);
 }
 .work_experience_website{
   font-size: 16px;
