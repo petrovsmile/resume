@@ -1,6 +1,7 @@
 //= require plugin/glightbox
 
 $(document).ready(function(){
+  var lightbox = GLightbox({});
 
   $('form input, form textarea').keyup(function(){
     $('.error_form_fields').slideUp();

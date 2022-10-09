@@ -3,8 +3,6 @@
 
 $(document).ready(function(){
 
-  var lightbox = GLightbox({});
-
   $('.main_menu a').click(function(e){
       e.preventDefault();
 
