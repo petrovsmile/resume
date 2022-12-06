@@ -1,4 +1,11 @@
 RailsAdmin.config do |config|
+  config.authenticate_with do
+    authenticate_or_request_with_http_basic do |username, password|
+      username == Rails.application.credentials.dig(:rails_admin, :username) &&
+      password == Rails.application.credentials.dig(:rails_admin, :password)
+    end
+  end
+  
   config.asset_source = :sprockets
 
   ### Popular gems integration

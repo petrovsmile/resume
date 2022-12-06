@@ -8,7 +8,6 @@ set :deploy_to, "/home/app/project/resume"
 
 #Git
 set :repo_url, "git@github.com:petrovsmile/resume.git"
-set :branch, 'main'
 
 #RVM
 set :rvm_type, :user
