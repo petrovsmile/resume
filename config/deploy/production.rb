@@ -1,4 +1,4 @@
-server "185.178.46.84", user: "app", roles: %w{web app db}, port: 3980
+server "90.156.225.148", user: "app", roles: %w{web app db}, port: 3980
 
 # server-based syntax
 # ======================
