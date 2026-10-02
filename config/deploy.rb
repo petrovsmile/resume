@@ -1,17 +1,19 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.17.1"
+lock "~> 3.20.1"
 
 set :application, "Resume"
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/app/project/resume"
 
+set :branch, "main"
+
 #Git
 set :repo_url, "git@github.com:petrovsmile/resume.git"
 
 #RVM
 set :rvm_type, :user
-set :rvm_ruby_version, '3.0.0'
+set :rvm_ruby_version, '3.3.4'
 
 #PUMA
 
