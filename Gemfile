@@ -26,10 +26,11 @@ gem 'coffee-rails'
 gem 'jquery'
 gem 'jquery-rails'
 gem 'mini_magick'
-gem 'pg'
+gem 'mysql2'
 gem 'rails_admin'
 gem 'rubocop', require: false
 gem 'rubocop-rails', require: false
+gem "json", "~> 2.6"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4'

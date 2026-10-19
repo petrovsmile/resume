@@ -1,81 +1,85 @@
-<% 
-range_of_work_position = work_experience.range_of_work_position(start_date,finish_date)
-stacks = work_experience.stacks
-%> 
-<div class="work_experience">  
+<%
+  range_of_work_position = work_experience.range_of_work_position(start_date, finish_date)
+  stacks = work_experience.stacks
+%>
+<div class="work_experience">
 
-    <div class="work_experience_company_name">
-        #<%=(work_experience_counter + 1)%>
-        <b><%=work_experience.company_name%></b>
-        <span><%=work_experience.city%></span>
+  <div class="work_experience_company_name">
+    #<%= (work_experience_counter + 1) %>
+    <b><%= work_experience.company_name %></b>
+    <span><%= work_experience.city %></span>
+  </div>
+  <% if work_experience.web_site.present? %>
+    <a href="<%= work_experience.web_site %>" target="_blank" class="work_experience_website">
+      🔗 <%= URI(work_experience.web_site).host %>
+    </a>
+  <% end %>
+
+  <div class="work_experience_date_info">
+    <div class="work_experience_date_info_date work_experience_date_info_date_main start">
+      <%= I18n.l start_date, format: '%b %Y' %>
     </div>
-    <% if work_experience.web_site.present? %>
-        <a href="<%=work_experience.web_site%>" target="_blank" class="work_experience_website">
-            🔗 <%=URI(work_experience.web_site).host%>
-        </a>
-    <% end %>
-
-    <div class="work_experience_date_info">
-        <div class="work_experience_date_info_date work_experience_date_info_date_main start">
-            <%=I18n.l start_date, format: '%b %Y'%>
-        </div>
-        <div class="work_experience_date_info_date work_experience_date_info_date_main finish">
-            <%=I18n.l finish_date, format: '%b %Y'%>
-        </div>
-        <div class="work_experience_date_info_range" style="width: <%=range_of_work_position[:width]%>%; left: <%=range_of_work_position[:left]%>%">
-            <%= work_experience.period %>
-            <div class="work_experience_date_info_date work_experience_date_info_date_range start">
-                <%=I18n.l work_experience.start_work, format: '%b %Y'%> -->
-            </div>
-            <div class="work_experience_date_info_date work_experience_date_info_date_range finish">
-                <-- <%=I18n.l work_experience.finish_work, format: '%b %Y'%>
-            </div>
-        </div>
+    <div class="work_experience_date_info_date work_experience_date_info_date_main finish">
+      <%= I18n.l finish_date, format: '%b %Y' %>
     </div>
+    <div class="work_experience_date_info_range" style="width: <%=range_of_work_position[:width]%>%; left: <%=range_of_work_position[:left]%>%">
+      <%= work_experience.period %>
+      <div class="work_experience_date_info_date work_experience_date_info_date_range start">
+        <%= I18n.l work_experience.start_work, format: '%b %Y' %> -->
+      </div>
+      <div class="work_experience_date_info_date work_experience_date_info_date_range finish">
+        <-- <%= I18n.l work_experience.finish_work, format: '%b %Y' %>
+      </div>
+    </div>
+  </div>
 
-    <% if work_experience.post.present? %>
-        <div class="work_experience_post">
-            Должность: <span><%=work_experience.post%></span>
-        </div>
-    <% end %>
+  <% if work_experience.post.present? %>
+    <div class="work_experience_post">
+      Должность: <span><%= work_experience.post %></span>
+    </div>
+  <% end %>
 
-    <% if stacks.present? %>
-        <div class="work_experience_stacks">
-        <div class="work_experience_stacks_title">
-            Стек:
-        </div>
-        <% stacks.order(name: :asc).each do |stack| %>
-            <div class="work_experience_stack"><%=stack.name%></div>
-        <% end %>
-        </div>
-    <% end %>
-    
-    <% if work_experience.description.present? %>
-        <div class="work_experience_description">
-            <div class="work_experience_description_title">
-                <span>🗒️</span> Описание проекта: 
-            </div>
-            <div class="work_experience_description_text">
-                <%= work_experience.description %>
-            </div>
-        </div>
-    <% end %>
+  <% if stacks.present? %>
+    <div class="work_experience_stacks">
+      <div class="work_experience_stacks_title">
+        Стек:
+      </div>
+      <% stacks.order(name: :asc).each do |stack| %>
+        <div class="work_experience_stack"><%= stack.name %></div>
+      <% end %>
+    </div>
+  <% end %>
 
+  <% if work_experience.description.present? %>
     <div class="work_experience_description">
-        <div class="work_experience_description_title">
-            <span>💻</span> Что я делал: 
-        </div>
-        <div class="work_experience_description_text">
-            <%= work_experience.what_did_do %>
-        </div>
+      <div class="work_experience_description_title">
+        <span>🗒️</span> Описание проекта:
+      </div>
+      <div class="work_experience_description_text">
+        <%= work_experience.description %>
+      </div>
     </div>
+  <% end %>
 
+  <% if work_experience.what_did_do.present? %>
     <div class="work_experience_description">
-        <div class="work_experience_description_title">
-            <span>🧠</span> Чему научился: 
-        </div>
-        <div class="work_experience_description_text">
-            <%= work_experience.what_learned %>
-        </div>
+      <div class="work_experience_description_title">
+        <span>💻</span> Что я делал:
+      </div>
+      <div class="work_experience_description_text">
+        <%= work_experience.what_did_do %>
+      </div>
     </div>
+  <% end %>
+
+  <% if work_experience.what_learned.present? %>
+    <div class="work_experience_description">
+      <div class="work_experience_description_title">
+        <span>🧠</span> Чему научился:
+      </div>
+      <div class="work_experience_description_text">
+        <%= work_experience.what_learned %>
+      </div>
+    </div>
+  <% end %>
 </div> 

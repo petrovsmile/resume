@@ -1,17 +1,21 @@
 default: &default
-  adapter: postgresql
-  encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  adapter: mysql2
+  pool: 5
+  host: localhost
+  encoding: utf8mb4
+  collation: utf8mb4_unicode_ci
 
 development:
   <<: *default
   database: resume
+  username: root
+  password: Mirkom63
 
 production:
   <<: *default
   database: resume
-  username: <%= Rails.application.credentials.dig(:pg_production, :user) %>
-  password: <%= Rails.application.credentials.dig(:pg_production, :password) %>
+  username: <%= Rails.application.credentials.dig(:production, :user) %>
+  password: <%= Rails.application.credentials.dig(:production, :password) %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
