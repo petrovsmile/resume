@@ -1,5 +1,8 @@
 server "90.156.225.148", user: "app", roles: %w{web app db}, port: 3980
 
+# Build native gems against the production server's older glibc.
+set :bundle_config, { deployment: true, force_ruby_platform: true }
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
